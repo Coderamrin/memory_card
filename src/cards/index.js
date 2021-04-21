@@ -1,6 +1,6 @@
 const Images = {
-	Victini: require('./Victini.png').default,
-	Riolu: require('./Riolu.png').default,
+	TapuKokoV: require('./Tapu-Koko-V.png').default,
+	SingleStrikeUrshifu: require('./Single-Strike-Urshifu-V.png').default,
 	ZygardeEx: require('./Zygarde-EX.png').default,
 	JolteonEx: require('./Jolteon-EX.png').default,
 	MLucario: require('./M-Lucario-EX.png').default,
@@ -11,4 +11,4 @@ const Images = {
 	FlappleVmax: require('./Flapple-Vmax.png').default,
 }
 
-export default Images;
+export default Images; 

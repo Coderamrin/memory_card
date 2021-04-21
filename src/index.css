@@ -27,3 +27,13 @@ code {
 .card:hover {
 	cursor: pointer;
 }
+
+.scoreTracker {
+	width: 15%; 
+	margin: auto;
+}
+
+h3 {
+	margin: 5px 0;
+	width: auto;   
+}
