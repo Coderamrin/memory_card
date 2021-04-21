@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: #51c4d3; 
 }
 
 code {
@@ -14,13 +15,13 @@ code {
 
 .cards {
 	display: grid;
-	width: 80%;
+	width: 70%;
 	margin: auto;
 	grid-template-columns: repeat(5, 1fr);
 }
 
 .card {
-	width: 85%;
+	width: 80%;
 	margin-top: 30px;
 }
 
@@ -35,5 +36,19 @@ code {
 
 h3 {
 	margin: 5px 0;
-	width: auto;   
+	width: auto;
+	font-size: 15px;   
+}
+
+header {
+	text-align: center;
+	font-family: sans-serif;
+	text-transform: uppercase;
+	background: #132c33;
+	color: #d8e3e7; 
+	margin: 0; 
+	padding: 30px;
+}
+h1 {
+	margin: 0;
 }

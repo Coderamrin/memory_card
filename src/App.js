@@ -5,8 +5,10 @@ import ScoreTracker from "./components/scoreTracker";
 function App() {
 	randomCardGenerator();
 	return <>
+		<header>
+			<h1>Memory Game</h1> 
+		</header>
 		<CardGenerator/>
-
 	</>
 }
 
