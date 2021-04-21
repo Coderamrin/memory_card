@@ -2,7 +2,7 @@ import React from "react";
 import Images from "../cards";
 
 
-const imgArr = [
+let imgArr = [
 	Images.Riolu,
 	Images.Victini,
 	Images.ZygardeEx,
@@ -19,8 +19,12 @@ function getRndInteger(min, max) {
   return Math.floor(Math.random() * (max - min) ) + min;
 }
 
-function handleClick(e) {
-	console.log(imgArr);
+function handleClick() {
+	let imgs = document.querySelectorAll(".card");
+	imgs.forEach(img => {
+		const index = getRndInteger(0, 10);
+		img.src= imgArr[index];
+	});
 }
 
 function CardGenerator() {
@@ -32,7 +36,7 @@ function CardGenerator() {
 			<img onClick={handleClick} className="card"  alt="card" src={imgArr[3]}/>
 			<img onClick={handleClick} className="card" alt="card"  src={imgArr[4]}/>
 			<img onClick={handleClick} className="card" alt="card"  src={imgArr[5]}/>
-			<img onClick={handleClick} className="card" alt="card"  src={imgArr[6]}/>
+			<img onClick={handleClick} className="card" alt="card"  src={imgArr[6]}/> 
 			<img onClick={handleClick} className="card" alt="card"  src={imgArr[7]}/>
 			<img onClick={handleClick} className="card" alt="card"  src={imgArr[8]}/>
 			<img onClick={handleClick} className="card" alt="card"  src={imgArr[9]}/>
@@ -40,5 +44,6 @@ function CardGenerator() {
 
 		); 
 }
+
 
 export default CardGenerator;  
