@@ -9,5 +9,4 @@ function ScoreTracker(props) {
 		)
 }
 
-export default ScoreTracker;
- 
+export default ScoreTracker; 
