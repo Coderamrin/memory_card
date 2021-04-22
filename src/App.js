@@ -7,18 +7,18 @@ function App() {
 	const [highestScore, setHighestScore] = useState(0);
 
 	function handleClick(e) { 
-		
-		if (clickedCards.includes(e.target.alt)) {
+		const card = e.target.alt;
+		if (clickedCards.includes(card)) {
 			if (score > highestScore) {
 				setHighestScore(score); 
 			}
 			setClickedcard([]);
 			setScore(0);
 		} else {
-			setClickedcard(clickedCards => [...clickedCards, e.target.alt]); 
+			setClickedcard(clickedCards => [...clickedCards, card]);
 			setScore(score + 1);
 		}
-		
+		 
 		randomCardGenerator();
 	}
 
