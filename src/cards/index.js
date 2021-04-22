@@ -9,6 +9,7 @@ const Images = {
 	RapidStrikeUrshifuVMAX: require('./Rapid-Strike-Urshifu-VMAX.png').default,
 	RapidStrikeUrshifuV: require('./Rapid-Strike-Urshifu-V.png').default,
 	FlappleVmax: require('./Flapple-Vmax.png').default,
-}
+} 
 
-export default Images; 
+
+export default Images;

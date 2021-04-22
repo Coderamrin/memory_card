@@ -1,9 +1,7 @@
 import React from 'react'; 
-import { CardGenerator, randomCardGenerator } from "./components/cardGenerator";
-import ScoreTracker from "./components/scoreTracker";
+import { CardGenerator} from "./components/cardGenerator";  
 
 function App() {
-	randomCardGenerator();
 	return <>
 		<header>
 			<h1>Memory Game</h1> 
