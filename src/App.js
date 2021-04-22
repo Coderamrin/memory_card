@@ -1,7 +1,11 @@
-import React from 'react'; 
-import { CardGenerator} from "./components/cardGenerator";  
+import React, {useEffect} from 'react'; 
+import { CardGenerator, randomCardGenerator } from "./components/cardGenerator";  
 
 function App() {
+	useEffect(() => {
+		randomCardGenerator();
+	});
+
 	return <>
 		<header>
 			<h1>Memory Game</h1> 
@@ -10,5 +14,5 @@ function App() {
 	</>
 }
 
-export default App;   
+export default App;    
   
