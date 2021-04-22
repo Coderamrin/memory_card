@@ -1,6 +1,6 @@
 import React,{useState} from "react";
 import Images from "../cards"; 
-import ScoreTracker from "./scoreTracker" 
+import ScoreTracker from "./scoreTracker"; 
 
 const cardsArray = [
 		[
@@ -10,9 +10,9 @@ const cardsArray = [
 
 		[
 			Images.SingleStrikeUrshifu,
-			"Single Strike Urshifu"
+			"Single Strike Urshifu V" 
 		],
-
+ 
 		[
 			Images.ZygardeEx,
 			"Zygarde Ex"
@@ -25,7 +25,7 @@ const cardsArray = [
 
 		[
 			Images.MLucario,
-			"M Lucario"
+			"M Lucario Ex"
 		],
 
 		[
@@ -36,7 +36,7 @@ const cardsArray = [
 		[
 			Images.TapuKokoVmax,
 			"Tapu Koko Vmax"
-		],
+		], 
 
 		[
 			Images.RapidStrikeUrshifuVMAX,
@@ -53,7 +53,7 @@ const cardsArray = [
 			"Flapple Vmax"
 		] 
 
-];   
+]; 
 
 function getRndInteger(min, max) {
   return Math.floor(Math.random() * (max - min) ) + min;
@@ -61,82 +61,44 @@ function getRndInteger(min, max) {
 
 function randomCardGenerator() {
 	let cards = document.querySelectorAll(".card");
-
 	cards.forEach(card => {
 		let index = getRndInteger(0, 10);
 		let img = card.childNodes[0];
 		let description = card.childNodes[1];
 		
 		img.src = cardsArray[index][0];
+		img.alt = cardsArray[index][1];
 		description.textContent = cardsArray[index][1];   
 	});
 }
 
-function CardGenerator() {
-	const [score, setScore] = useState(0);
-	const [highestScore, setHighestScore] = useState(0);
-
-	function handleClick(e) {
-		randomCardGenerator();
-		setScore(score + 1);
-	} 
-
+function Cards(props) { 
 	return (
 		<div>
-			<ScoreTracker cScore={score} hScore={highestScore} /> 
+			<ScoreTracker cScore={props.score} hScore={props.highestScore} /> 
 			<div className="cards">
-				<div onClick={handleClick} className="card">
-	 				<img src={Images.TapuKokoV} alt="TapuKokoV"/>
+				<div onClick={props.handleClick} className="card">
+	 				<img src={Images.TapuKokoV} alt= {cardsArray[0][1]}  />
 	 				<span>Tapu KOKO V</span> 
 				</div>
 
-				<div onClick={handleClick} className="card">
-	 				<img src={Images.SingleStrikeUrshifu} alt="SingleStrikeUrshifu"/>
-	 				<span>single strike urshifu</span>  
+				<div onClick={props.handleClick} className="card">
+	 				<img src={Images.SingleStrikeUrshifu} alt= {cardsArray[1][1]}  />
+	 				<span>single strike urshifu V</span>   
 				</div> 
 
-				<div onClick={handleClick} className="card">
-	 				<img src={Images.ZygardeEx} alt="ZygardeEx"/>
-	 				<span>Zygarde Ex</span>  
+				<div onClick={props.handleClick} className="card">
+	 				<img src={Images.ZygardeEx} alt={cardsArray[2][1]} /> 
+					<span>Zygarde Ex</span>  
 				</div> 
 
-				<div onClick={handleClick} className="card">
-	 				<img src={Images.JolteonEx} alt="JolteonEx"/>
-	 				<span>Jolteon Ex</span> 
-				</div> 
-
-				<div onClick={handleClick} className="card">
-	 				<img src={Images.MLucario} alt="MLucario"/>
-	 				<span>M Lucario</span> 
-				</div> 
-
-				<div onClick={handleClick} className="card">
-	 				<img src={Images.MManectricEx} alt="MManectricEx"/>
-	 				<span>M Manectric Ex</span> 
-				</div> 
-
-				<div onClick={handleClick} className="card">
-	 				<img src={Images.TapuKokoVmax} alt="TapuKokoVmax"/>
-	 				<span>Tapu KOKO Vmax</span> 
-				</div> 
-
-				<div onClick={handleClick} className="card">
-	 				<img src={Images.RapidStrikeUrshifuVMAX} alt="RapidStrikeUrshifuVMAX"/>
-	 				<span>Rapid Strike Urshifu VMAX</span> 
-				</div>
-
-				<div onClick={handleClick} className="card">
-	 				<img src={Images.RapidStrikeUrshifuV} alt="RapidStrikeUrshifuV"/>
-	 				<span>Rapid Strike Urshifu V</span> 
-				</div> 
-
-				<div onClick={handleClick} className="card">
-	 				<img src={Images.FlappleVmax} alt="FlappleVmax"/>
-	 				<span>Flapple Vmax</span> 
-				</div>  		
+				<div onClick={props.handleClick} className="card">
+	 				<img src={Images.JolteonEx} alt={cardsArray[3][1]} />
+					<span>Jolteon Ex</span> 
+				</div> 		
 			</div>	 
 		</div>
 		);  
 }
- 
-export { CardGenerator, randomCardGenerator };  
+  
+export { Cards, randomCardGenerator };  
