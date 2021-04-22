@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React from "react";
 import Images from "../cards"; 
 import ScoreTracker from "./scoreTracker"; 
 

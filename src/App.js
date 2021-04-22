@@ -15,17 +15,17 @@ function App() {
 			setClickedcard([]);
 			setScore(0);
 		} else {
-			clickedCards.push(e.target.alt);
+			setClickedcard(clickedCards => [...clickedCards, e.target.alt]); 
 			setScore(score + 1);
 		}
-
+		
 		randomCardGenerator();
 	}
 
 	return <>
 		<header>
 			<h1>Memory Game</h1>
-			<p>click on the Image to get score</p>  
+			<p>click on the Image to get score</p> 
 		</header>
 		<Cards 
 		handleClick={handleClick}
